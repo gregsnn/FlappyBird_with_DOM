@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Pixel';
+    src: url(../fonts/Pixel.ttf);
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+
+    position: relative;
+}
+
+.bgi {
+    background-image: url(../imgs/bgFlappy.png);
+    background-color: rgba(0, 153, 204, 1);
+    background-repeat: round;
+
+    animation-name: flappy;
+    animation-duration: 100s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+
+@keyframes flappy {
+    0% {background-position: 11000px;}
+    100% {background-position: 0;}
+}
+
+[wm-flappy] {
+    position: relative;
+
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.passaro {
+    position: absolute;
+    width: 3%;
+    left: calc(50% - 30px);
+}
+
+.par-de-barreiras {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.barreira {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.barreira .borda {
+    height: 3vh;
+    width: 70px;
+    background: linear-gradient(90deg, #639301, #A6E82E);
+    border: solid 2px #000;
+}
+
+.barreira .corpo {
+    height: 10vh;
+    width: 50px;
+    background: linear-gradient(90deg, #639301, #A6E82E);
+    border-left: solid 2px rgba(0, 0, 0, 0.659);
+    border-right: solid 2px rgba(0, 0, 0, 0.659);
+}
+
+.progresso {
+    color: #fff;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-family: Pixel;
+    font-size: 2rem;
+    z-index: 5;
+}
